@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #dae1eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    user-select: none;
+}
+
+.dash {
+    margin-top: 10px;
+    width: 80%;
+    height: 80px;
+    background-color: #dae1eb;
+    border-radius: 8px;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .1),
+        -1rem -1rem 2rem rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    font-family: 'Montserrat';
+}
+
+.card {
+    overflow: hidden;
+    min-height: 300px;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .1),
+        -1rem -1rem 2rem rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.card p {
+    text-align: center;
+    font-weight: lighter;
+}
+
+.card img {
+    max-width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+    opacity: .7;
+}
+
+a {
+    width: 90%;
+    height: 30px;
+    margin: 20px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .1),
+        -1rem -1rem 2rem rgba(255, 255, 255, 0.5);
+}
+
+a:hover {
+    box-shadow: inset 1rem 1rem 2rem rgba(0, 0, 0, .1),
+        inset -1rem -1rem 2rem rgba(255, 255, 255, 0.5);
+}
+
+.card:hover {
+    transform: scale(1.01);
+    transition: transform ease-in-out 100ms;
+}
