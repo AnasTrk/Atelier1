@@ -32,7 +32,6 @@
     }else{
         header('location:index.php?fromPanier');
     }
-    print_r(unserialize($_COOKIE['Products']));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,6 +73,7 @@
             }
         ?>
     </div>
+    
     <!-- <div class='card'>
             <img src='product.png' alt='product'>
             <h3>Product 1</h3>

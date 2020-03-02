@@ -91,8 +91,101 @@ a:hover {
 }
 
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Montserrat';
+    background-color: #dae1eb;
+    width: 100% !important;
+}
+
+.container {
+
+    width: 90vw;
+    background-color: #dae1eb;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    grid-gap: 15px;
+    font-family: 'Montserrat';
+    user-select: none;
+    align-items: center;
+    padding: 30px;
+    margin: auto;
+}
+
+.card {
+    overflow: hidden;
+    min-height: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .1),
+        -1rem -1rem 2rem rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.card p {
+    text-align: center;
+    font-weight: lighter;
+}
+
+.card img {
+    max-width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+    opacity: .7;
+}
+
+a {
+    width: 90%;
+    height: 30px;
+    margin: 20px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .1),
+        -1rem -1rem 2rem rgba(255, 255, 255, 0.5);
+}
+
+a:hover {
+    box-shadow: inset 1rem 1rem 2rem rgba(0, 0, 0, .1),
+        inset -1rem -1rem 2rem rgba(255, 255, 255, 0.5);
+}
+
+.card:hover {
+    transform: scale(1.01);
+    transition: transform ease-in-out 100ms;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: #dae1eb;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 15px;
+    background-image: linear-gradient(transparent, #fff);
+    border-radius: 8px;
+}
+
+
 .dash {
-    position: fixed;
+    position: relative;
     margin: auto;
     margin-top: 10px;
     width: 80%;
