@@ -73,7 +73,15 @@
             }
         ?>
     </div>
-    
+    <?php
+        if(empty($allProducts)){
+            echo" <div class='vide'>
+            <img src='vide.png' alt='vide'>
+            <h4>Panier est vide</h4>
+        </div>";
+        }
+    ?>
+   
     <!-- <div class='card'>
             <img src='product.png' alt='product'>
             <h3>Product 1</h3>
