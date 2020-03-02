@@ -202,8 +202,8 @@ a:hover {
 .vide {
     position: absolute;
     left: 50%;
-    width: 50%;
-    height: 50%;
+    width: 20%;
+    height: 10%;
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
