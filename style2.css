@@ -92,7 +92,7 @@ a:hover {
 
 
 .dash {
-    position: relative;
+    position: fixed;
     margin: auto;
     margin-top: 10px;
     width: 80%;
