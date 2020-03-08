@@ -31,20 +31,21 @@
     //             header('location:DashBoard.php');
     //     }
     // }
-    if(!isset($_COOKIE['flag'])){
+    session_start();
+    if(!isset($_SESSION['flag'])){
         if($_POST['User']=="emsi" AND $_POST['Pass']=="emsi"){
-            setcookie('flag',0,time()+3600);
+            $_SESSION['flag']=0;
         }else{
             header('location:index.php?error');
         }
     }
     else{
-        if($_COOKIE['flag']==0){
-            setcookie('flag',1,time()+3600);
+        if($_SESSION['flag']==0){
+            $_SESSION['flag']=1;
             header('location:index.php?error2');
         }
-        if($_COOKIE['flag']==1){
-            setcookie('flag',2,time()+3600);
+        if($_SESSION['flag']==1){
+            $_SESSION['flag']=2;
         }
     }
 ?>

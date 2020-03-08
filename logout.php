@@ -1,6 +1,7 @@
 <?php
-    if(isset($_COOKIE['flag'])){
-        setcookie('flag',0);
+    session_start();
+    if(isset($_SESSION['flag'])){
+       session_destroy();
         header('location:index.php');
     }
 ?>

@@ -10,6 +10,7 @@ a {
 }
 
 body {
+    position: relative;
     height: 100vh;
     width: 100vw;
     background-color: #dae1eb;

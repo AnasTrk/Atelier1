@@ -1,33 +1,39 @@
 <?php
-    if(isset($_COOKIE['flag'])){
+session_start();
+    if(isset($_SESSION['flag'])){
         if(isset($_GET["IdProduct"])){
-            if(!isset($_COOKIE["Products"]))
+            if(!isset($_SESSION["Products"]))
             {
                 $products;
                 $products[0]=$_GET["IdProduct"];
-                setcookie('Products',serialize($products),time()+3600);
+                // setcookie('Products',serialize($products),time()+3600);
+                $_SESSION['Products']=serialize($products);
+                $_SESSION['counter']=0;
                 setcookie('counter',0,time()+3600);
-                $counter=$_COOKIE['counter'];
+                $counter=$_SESSION['counter'];
                 echo "--$counter--";
                 header('location:Panier.php');
             }
             else
             {
-                $counter=$_COOKIE['counter'];
+                $counter=$_SESSION['counter'];
                 echo $counter;
-                setcookie('counter',(integer)$counter+1,time()+3600);
-                echo $_COOKIE['counter'];
-                $products=unserialize($_COOKIE['Products']);
-                        $products[$_COOKIE['counter']+1]=$_GET["IdProduct"];
-                        setcookie('Products',serialize($products),time()+3600);
+                $_SESSION['counter']=(integer)$counter+1;
+                // setcookie('counter',(integer)$counter+1,time()+3600);
+                echo $_SESSION['counter'];
+                $products=unserialize($_SESSION['Products']);
+                        $products[$_SESSION['counter']+1]=$_GET["IdProduct"];
+                        // setcookie('Products',serialize($products),time()+3600);
+                        $_SESSION['Products']=serialize($products);
                         header('location:Panier.php');
             }
         }
         if(isset($_GET['RemoveProduct'])){
-            $products=unserialize($_COOKIE['Products']);
-           $diff=array_diff($products,array($_GET['RemoveProduct']));
-           setcookie('Products',serialize($diff),time()+3600);
-           header('location:Panier.php');
+            $products=unserialize($_SESSION['Products']);
+            $diff=array_diff($products,array($_GET['RemoveProduct']));
+            //setcookie('Products',serialize($diff),time()+3600);
+            $_SESSION['Products']=serialize($diff);
+            header('location:Panier.php');
         }
     }else{
         header('location:index.php?fromPanier');
@@ -49,10 +55,10 @@
     </div>
     <div class="container">
         <?php
-            $allProducts=unserialize($_COOKIE['Products']);
+            $allProducts=unserialize($_SESSION['Products']);
             sort($allProducts);
             function CountElement($E){
-                $allProducts=unserialize($_COOKIE['Products']);
+                $allProducts=unserialize($_SESSION['Products']);
                 sort($allProducts);
                 $count=0;
                 for($i=0;$i<count($allProducts);$i++){

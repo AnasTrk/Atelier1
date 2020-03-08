@@ -55,12 +55,14 @@
 	// 		}
 	// 	}
 	// 	if($_GET[])
-	// }
-	if(isset($_COOKIE['flag'])){
-		if($_COOKIE['flag']==2){
+	// 
+	session_start();
+	if(isset($_SESSION['flag'])){
+		if($_SESSION['flag']==2){
 			header('location:DashBoard.php?AuthTry=');
 		}
 	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,10 +70,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="error.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<title>Login|Emsi</title>
 </head>
 <body>
+	<?php 	
+	if(isset($_GET['error']))
+	{
+		echo"<div class='error'>
+		<h3> S'authentifier SVP!!!!!!!!!</h3>
+		</div>";
+	}
+	if(isset($_GET['fromPanier']))
+	{
+		echo"<div class='error'>
+		<h3> il faut authentifier </h3>
+		</div>";
+	}
+	?>
 	<form action="DashBoard.php" method="POST">
 		<h1> LOG IN</h1>
 		<input name="User" type="text" placeholder="Username">

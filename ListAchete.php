@@ -1,5 +1,6 @@
 <?php
-    if(!isset($_COOKIE['flag'])){
+    session_start();
+    if(!isset($_SESSION['flag'])){
         header('location:DashBoard.php');
     }
 ?>
@@ -29,6 +30,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, harum!</p>
                         <a href='Panier.php?IdProduct=".$i."'>Buy</a>
                 </div>";
+                $cpt=12;
                 }
         ?>
     </div>
